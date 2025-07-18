@@ -16,13 +16,13 @@ pipeline {
   stages {
     stage('Docker Build') {
       steps {
-        sh 'docker build -t apasoft/jenkins-web:latest .'
+        sh 'docker build -t makenshi86/jenkins-web:latest .'
       }
     }
     stage('Docker Push') {
       steps {        
           sh "docker login -u ${env.DOCKER_USR} -p ${env.DOCKER_PSW}"
-          sh 'docker push apasoft/jenkins-web:latest'
+          sh 'docker push makenshi86/jenkins-web:latest'
       }
     }
   }
